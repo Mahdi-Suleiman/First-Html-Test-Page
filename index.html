@@ -5,6 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-sclae=1.0">
     <title>HTML Training</title>
+    <style>
+        div {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,71 +27,263 @@
     </head>
     <nav>
         <h2>Heading 2 inside <span style="color: brown;">nav tag</span></h2>
+
         <p>Navigation bar</p>
+        <a href="about_us.html">About us</a>
     </nav>
+    <aside style="text-align: right;">
+        <h2>Sections:</h2>
+        <nav>
+            <ul style="list-style-type: none;">
+                <li><a href="#img">Image</a></li>
+                <li><a href="#video">Video</a></li>
+                <li><a href="#audio">Audio</a></li>
+                <li><a href="#embeddedYutubeVideo">Youtube Video</a></li>
+                <li>Lists</li>
+                <li>Links</li>
+                <li><a href="#tables">Tables</a></li>
+                <li><a href="#form">Forms</a></li>
+                <li>Formating Elemnts + Inline Style</li>
+            </ul>
+        </nav>
+    </aside>
+    <hr>
     <main>
-        <div>
-            <img src="html5_structure (1).png" alt="HTML5 Structure" width="auto" height="auto"
-                style="max-width: 100%;">
-        </div>
+        <section>
+            <h2 id="img">Image</h2>
+            <div>
+                <img src="./image/html5_structure.png" alt="HTML5 Structure" width="auto" height="auto"
+                    style="max-width: 100%;">
+            </div>
+        </section>
+
         <hr>
-        <div>
+        <section>
+            <h2 id="video">Video Tag</h2>
             <video width="320" height="240" controls style="max-width: 100%">
-                <source src="movie.mp4" type="video/mp4">
-                <source src="movie.mp4" type="video/ogg">
-                your browser does not support the video tag
+                <source src="./video/movie.mp4" type="video/mp4">
+                <source src="./video/movie.mp4" type="video/ogg">
+                <p> your browser does not support HTML5 video tag.</p>
             </video>
-        </div>
+        </section>
         <hr>
-        <div>
-            <h2>Embedded youtube video</h2>
+        <section>
+            <h2 id="audio">Audio</h2>
+            <audio controls>
+                <source src="./audio/Bruh Sound Effect #2.mp3" type="audio/mpeg">
+                <source src="./audio/Bruh Sound Effect #2.ogg" type="audio/ogg">
+                <p> your browser does not support HTML5 audio tag. here is a <a
+                        href="https://www.youtube.com/watch?v=2ZIpFytCSVc">link</a> to the audio.</p>
+            </audio>
+        </section>
+        <hr>
+        <section>
+            <h2 id="embeddedYutubeVideo">Embedded youtube video</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/UB1O30fR-EE"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen style="max-width: 100%;"></iframe>
-        </div>
+        </section>
         <hr>
-        <form method="POST">
-            <label>First Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Enter First Name"><br>
-            <label>Last Name</label>
-            <input type="text" id="lname" name="lname" placeholder="Enter Last name">
+        <h2 id="form">Form</h2>
+        <form method="POST" autocomplete="on" action="">
+            <fieldset>
+                <legend>Form test</legend>
+                <div>
+                    <label for="name">Name </label>
+                    <input type="text" id="name" name="name" placeholder="Enter First Name" required><br>
+                </div>
+                <div>
+                    <label for="phone">Phone number </label>
+                    <input type="tel" id="phone" name="tel-national" placeholder="+[962] 7xxxxxxxx" maxlength="16"
+                        required><br>
+                </div>
+                <div>
+                    <label for="idNum">ID number </label>
+                    <input type="text" id="idNum" name="idNum" placeholder="9xxxxxxxxx" maxlength="10"><br>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="ex@mail.com" required><br>
+                </div>
+                <div>
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" value="18" required><br>
+                </div>
+                <div>
+                    <label for="birthdate">Birthdate</label>
+                    <input type="date" id="birthdate" name="birthdate"><br>
+                </div>
+                <div>
+                    <label>Gender</label>
+                    <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other"><label for="other">Other</label>
+                </div>
+                <div>
+                    <label for="major">Please choose your major</label>
+                    <select name="major">
+                        <option value="">--Please choose and option--</option>
+                        <optgroup label="IT">
+                            <option value="cs">CS</option>
+                            <option value="cis">CIS</option>
+                        </optgroup>
+                        <optgroup label="Engineering">
+                            <option value="civil">Civil Engineering</option>
+                            <option value="electrical">Electrical Engineering</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <section>
+                    <label>Choose your hobbies</label>
+                    <div>
+                        <input type="checkbox" id="coding" name="hobbies" value="coding">
+                        <label for="coding">Coding</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="sport" name="hobbies" value="sport">
+                        <label for="sport">Sport</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="swimming" name="hobbies" value="swimming">
+                        <label for="swimming">Swimming</label>
+                    </div>
+                </section>
+
+                <div>
+                    <input type="submit" name="submit" id="submit" value="Submit">
+                </div>
+            </fieldset>
         </form>
         <hr>
         <section>
-            <h2>our task today</h2>
-            <article>
-                <ol type="I">
-                    <li>HTML pages Structure and the difference in structure between HTML and HTML5
-                        <ul>
-                            <li>Old Div</li>
-                            <li>New Semantic Tags</li>
-                        </ul>
-                    </li>
-                    <li>HTML4, HTML5 Tags
-                        <ul>
-                            <li>Block-level</li>
-                            <li>Inline</li>
-                        </ul>
-                    </li>
-                    <li>Difference between inline and block elements</li>
-                    <li>Headings, Paragraphs and Typography</li>
-                </ol>
-            </article>
-        </section>
-        <hr>
-        <section>
-            <h2>Descriptive List</h2>
+            <h1>Types of Lists</h1>
+            <hr>
+            <h3> Un-orderd list </h3>
+            <!--Mahdi-->
+            <!-- 
+          Old Attributes: 
+          1- <ul type="disc">
+          2- <ul compact>   
+        -->
+            <!--New way:-->
+            <ul style="list-style-type: disc; line-height: 120%;">
+                <li>disc
+                    <ul>
+                        <li>a
+                            <ul>
+                                <li>b
+                                    <ul>
+                                        <li>c</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>circle</li>
+                <li>squre</li>
+                <li>none</li>
+            </ul>
 
-            <dl style="list-style-type: disc;">
-                <dt>Block-Level Elemnt</dt>
-                <dd>Take the whole width of it's parent</dd>
-                <dt>Inline Elemnt</dt>
-                <dd>Take it's neccissary witdh</dd>
+            <hr>
+            <!--Attributes:
+          1- Type
+          2- Start
+          3- Reversed
+          
+          -->
+            <h3> Orderd list </h3>
+            <!--Rahaf-->
+            <ol type="a">
+                <li>A</li>
+                <li>a</li>
+                <li>i</li>
+                <li>I</li>
+                <li>1</li>
+            </ol>
+            <hr>
+            <h3>Description List</h3>
+            <!--It has no specific Attributes-->
+            <dl>
+                <dt>Coffee
+                <dd>-Black</dd>
+                </dt>
+                <dt>Tea
+                <dd>-Green</dd>
+                </dt>
             </dl>
+
+            <hr>
+
+            <h3>Nested Lists</h3>
+            <h3>Today's Topics:</h3>
+
+            <ol>
+                <li>Lists
+                    <ul>
+                        <li>Un-ordered List
+                            <dl>
+                                <dt>It has 2 attributes that were replaced in HTML5</dt>
+                                <dd>-Compact</dd>
+                                <dd>-Type</dd>
+                                <dt>It was replaced by Style Attribute</dt>
+                                <dd>-list-style-type</dd>
+                                <dd>-line-height</dd>
+                            </dl>
+                        </li>
+                        <li>Ordered List
+                            <dl>
+                                <dt>It has 3 attributes</dt>
+                                <dd>-Type</dd>
+                                <dd>-Reversed</dd>
+                                <dd>-Start</dd>
+                            </dl>
+                        </li>
+                        <li>Description List
+                            <dl>
+                                <dt>-It has no attributes</dt>
+                            </dl>
+                        </li>
+                    </ul>
+                </li>
+                <li>Links</li>
+                <li>Tables</li>
+                <li>Forms</li>
+                <li>Formatting Elements + Inline style</li>
+            </ol>
         </section>
         <hr>
+        <h2>our task at day 2</h2>
+        <article>
+            <ol type="I">
+                <li>HTML pages Structure <em>the difference in structure</em> <strong>HTML and HTML5</strong>
+                    <ul>
+                        <li>Old Div</li>
+                        <li>New Semantic Tags</li>
+                    </ul>
+                </li>
+                <li>HTML4, HTML5 Tags
+                    <ul>
+                        <li>Block-level</li>
+                        <li>Inline</li>
+                    </ul>
+                </li>
+                <li>Difference between inline and block elements</li>
+                <li>Headings, Paragraphs and Typography</li>
+            </ol>
+        </article>
+        <hr>
+        <h2>Descriptive List</h2>
 
+        <dl style="list-style-type: disc;">
+            <dt>Block-Level Elemnt</dt>
+            <dd>Take the whole width of it's parent</dd>
+            <dt>Inline Elemnt</dt>
+            <dd>Take it's neccissary witdh</dd>
+        </dl>
+        <hr>
+        <h3>Group 1 members</h3>
         <ul type="square" style="line-height: normal;">
             <li>Rahaf</li>
             <li>Farah</li>
@@ -87,11 +292,54 @@
             <li>Thara'a</li>
             <li>Mahdi</li>
         </ul>
+
+        <hr>
+        <h2>Typography</h2>
+        <p>
+            this is <b>bold tag</b><br>
+            this is <strong>strong tag</strong><br>
+            this is <em>emphasized tag</em><br>
+            this is <mark>mark tag</mark><br>
+            this is <small>small tag</small><br>
+            this is <del>delete tag</del><br>
+            this is <ins>insert tag</ins><br>
+            this is <sup>sup tag</sup><br>
+            this is <sub>sub tag</sub><br>
+            My favorite color is <del style="color: blue;">Blue</del> <ins style="color: red;">Red!</ins>
+        </p>
     </main>
+    <hr>
+    <p>Lorem ipsum dolor sit, <em>consectetur adipisicing elit. Impedit similique facere</em><strong>nam harum excepturi
+            aperiam, voluptate provident dignissimos, autem reprehenderit </strong>quia ut nihil! Ullam ipsam quos
+        repellat earum quisquam.</p>
+    <hr>
+    <section>
+        <h1 id="tables">Tables</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="3">Info</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Head 1</th>
+                    <th>Head 2</th>
+                    <th>Head 3</th>
+                </tr>
+                <tr>
+                    <td>body 1</td>
+                    <td>body 2</td>
+                    <td>body 3</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
     <hr>
     <footer>
         Copyright &copy;, Mahdi Suleiman
     </footer>
+
 </body>
 
 </html>
